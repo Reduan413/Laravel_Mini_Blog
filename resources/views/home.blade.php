@@ -14,7 +14,12 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('All Post Blog') }}<br>
+                    @foreach($posts as $post)
+                        {{$post->title}}
+                        {{$post->body}}
+                        <br>
+                    @endforeach
                 </div>
             </div>
         </div>
