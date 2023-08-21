@@ -1,0 +1,117 @@
+/*================================================================================================
+	What We Do Area
+==================================================================================================*/
+.ISPTemplateV1-WhatWeDo-section {
+  background: #f3f7fe;
+  padding: 80px 0px;
+  overflow: hidden;
+}
+.WhatWeDo-card-icon img {
+  width: 64px;
+  height: 64px;
+}
+.WhatWeDo-card-icon {
+  margin-bottom: 16px;
+}
+.WhatWeDo-card-cont-title {
+  font-size: 18px;
+  font-weight: 600 !important;
+  margin-bottom: 6px;
+}
+.WhatWeDo-card-cont-text {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ISPTemplateV1-sub-heading-color);
+}
+.WhatWeDo-card-single {
+  text-align: center;
+  background: #fff;
+  padding: 24px;
+  margin-top: 24px;
+  transition: all 0.4s ease;
+max-height: 230px;
+  min-height: 230px;
+  overflow: hidden;
+}
+.WhatWeDo-card-single:hover {
+  box-shadow: var(--ISPTemplateV1-box-shadow2);
+}
+.WhatWeDo-cont-list li {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 24px;
+  color: var(--ISPTemplateV1-sub-heading-color);
+}
+.WhatWeDo-cont-list li:last-child {
+  margin: 0;
+}
+.WhatWeDo-cont-list li::before {
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: var(--ISPTemplateV1-primary-color);
+  left: 0px;
+  top: 5px;
+  border-radius: 100%;
+}
+.WhatWeDo-cont-list li::after {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background: var(--ISPTemplateV1-white-color);
+  left: 5px;
+  top: 10px;
+}
+.WhatWeDo-cont-text {
+  margin: 0;
+}
+.WhatWeDo-cont-list {
+  margin-top: 24px !important;
+}
+.WhatWeDo-card-main {
+  margin-left: 48px;
+}
+.WhatWeDo-content {
+  margin-top: 24px;
+}
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+  .WhatWeDo-card-main {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .WhatWeDo-card-main {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .WhatWeDo-cont-list li {
+    font-size: 15px;
+  }
+  .WhatWeDo-card-main {
+    margin-left: 0;
+  }
+  .WhatWeDo-card-cont-text {
+    font-size: 15px;
+  }
+  .WhatWeDo-card-single {
+    margin-top: 32px;
+  }
+  .WhatWeDo-cont-list li::after {
+    left: 4px;
+    top: 9px;
+  }
+  .WhatWeDo-cont-list li::before {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/*================================================================================================
+	End What We Do Area
+==================================================================================================*/

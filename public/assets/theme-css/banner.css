@@ -1,0 +1,80 @@
+/*================================================================================================
+	Banner Area
+==================================================================================================*/
+.ISPTemplateV1-banner {
+  padding: 80px 0px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--ISPTemplateV1-heading-color);
+}
+.banner-single-img img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+.banner-single {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+.banner-single-img {
+  position: relative;
+}
+.banner-single:hover .banner-single-img .banner-single-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+.banner-single-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.6);
+  opacity: 0;
+  visibility: hidden;
+  margin-left: -75px;
+  margin-top: -25.5px;
+  transition: all 0.4s ease;
+}
+.banner-single-img::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #ffffffbd;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.banner-single:hover .banner-single-img::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .banner-single {
+    margin-top: 40px;
+  }
+  .ISPTemplateV1-banner {
+    padding: 40px 0px 80px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .banner-single-img img {
+    height: 250px;
+  }
+  .banner-single {
+    height: 250px;
+    margin-top: 40px;
+  }
+  .ISPTemplateV1-banner {
+    padding: 40px 0px 80px;
+  }
+}
+/*================================================================================================
+	End Banner Area
+==================================================================================================*/

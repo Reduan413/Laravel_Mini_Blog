@@ -1,0 +1,52 @@
+/*================================================================================================
+	 Breadcrumbs Area
+==================================================================================================*/
+.ISPTemplateV1-breadcrumbs {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image:url('/public/img/breadcrumbs-bg.jpg'); */
+    background-color: var(--ISPTemplateV1-heading-color);
+
+}
+.breadcrumbs-content {
+  text-align: center;
+  padding: 112px 0px;
+}
+.breadcrumbs-cont-title {
+  font-size: 38px;
+  color: var(--ISPTemplateV1-white-color);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.breadcrumbs-cont-title::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 3px;
+  background: var(--ISPTemplateV1-white-color);
+  bottom: -1.5px;
+  left: 50%;
+  margin-left: -25%;
+}
+.breadcrumbs-cont-text {
+  margin: 0;
+  color: var(--ISPTemplateV1-white-color);
+}
+
+@media only screen and (max-width: 767px) {
+  .breadcrumbs-cont-title {
+    font-size: 30px;
+  }
+  .breadcrumbs-content {
+    padding: 94px 0px;
+  }
+  .ISPTemplateV1-breadcrumbs.b-single-breadcrumbs .breadcrumbs-content {
+    padding: 94px 0px;
+  }
+}
+/*================================================================================================
+	  End Breadcrumbs Area
+==================================================================================================*/

@@ -1,0 +1,27 @@
+/*========================================================================
+	 Notfound Area
+==========================================================================*/
+.notfound-page-inner {
+  text-align: center;
+}
+.notfound-page-btn {
+  margin-top: 24px;
+}
+.notfound-page-area {
+  padding-bottom: 120px;
+}
+
+.notfound-page-btn .eschool-btn.secondary-btn::before {
+  background: var(--eschool-heading-color) !important;
+}
+.notfound-page-btn .eschool-btn.secondary-btn:hover {
+  color: var(--eschool-white-color);
+}
+@media only screen and (max-width: 767px) {
+  .notfound-page-area {
+    padding-bottom: 80px;
+  }
+}
+/*========================================================================
+        End Notfound Area
+  ==========================================================================*/

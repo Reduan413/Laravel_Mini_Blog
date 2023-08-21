@@ -1,0 +1,75 @@
+/*================================================================================================
+	About Area
+==================================================================================================*/
+.ISPTemplateV1-about-section {
+  background: #fff;
+  padding: 80px 0px;
+  overflow: hidden;
+}
+.about-section-quote {
+  background: #f3f7fe;
+  padding: 32px;
+  margin: 32px 0px 24px;
+  position: relative;
+  border-radius: 4px;
+}
+.about-section-quote-text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ISPTemplateV1-sub-heading-color);
+  margin-left: 32px;
+  margin-top: -16px;
+}
+.about-section-quote i {
+  font-size: 30px;
+  color: var(--ISPTemplateV1-primary-color);
+  position: relative;
+}
+.about-section-text {
+  margin-bottom: 12px;
+  color: var(--ISPTemplateV1-sub-heading-color);
+}
+.about-section-btn {
+  margin-top: 28px;
+}
+.about-section-img img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+.about-section-img {
+  margin-left: 48px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .about-section-img {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about-section-quote-text {
+    margin: 0;
+    font-size: 18px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .about-section-quote {
+    padding: 24px;
+    margin: 24px 0px;
+  }
+  .about-section-quote i {
+    font-size: 28px;
+  }
+  .about-section-img {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .about-section-img img {
+    height: 320px;
+  }
+}
+/*================================================================================================
+	End About Area
+==================================================================================================*/

@@ -1,0 +1,55 @@
+/*================================================================================================
+	Service Area
+==================================================================================================*/
+.ISPTemplateV1-service {
+  padding: 40px 0px 80px;
+  background: #f3f7fe;
+}
+.service-card-icon img {
+  width: 72px;
+  height: 72px;
+}
+.service-card-icon {
+  margin-bottom: 18px;
+}
+.service-card-cont-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.service-card-cont-text {
+  margin: 0;
+  font-size: 16px;
+  color: var(--ISPTemplateV1-sub-heading-color);
+}
+.service-card-single {
+    padding: 24px;
+    background: #fff;
+    margin-top: 40px;
+    transition: all 0.4s ease;
+    max-height: 280px;
+    min-height: 280px;
+    overflow: hidden;
+}
+.service-card-single:hover {
+  box-shadow: var(--ISPTemplateV1-box-shadow2);
+  background: #fff;
+}
+.service-card-icon i {
+    color: var(--ISPTemplateV1-primary-color);
+}
+@media only screen and (max-width: 767px) {
+  .service-card-icon img {
+    width: 64px;
+    height: 64px;
+  }
+  .service-card-cont-text {
+    font-size: 15px;
+  }
+  .service-card-cont-title {
+    font-size: 18px;
+  }
+}
+
+/*================================================================================================
+	End Service Area
+==================================================================================================*/

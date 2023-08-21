@@ -1,0 +1,29 @@
+/*================================================================================================
+	Valuable Clients Area
+==================================================================================================*/
+.valuable-clients-area {
+  padding: 0px 0px 80px;
+}
+.clients-single {
+  text-align: center;
+}
+.clients-single img {
+  width: 150px !important;
+  height: 80px;
+  object-fit: cover;
+  filter: brightness(105%) grayscale(100%);
+}
+.clients-single:hover img {
+  filter: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .clients-single img {
+    width: 130px !important;
+    height: 64px;
+  }
+}
+
+/*================================================================================================
+	End Valuable Clients Area
+==================================================================================================*/
