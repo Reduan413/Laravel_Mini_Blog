@@ -9,16 +9,16 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     {{ __('All Post Blog') }}<br>
                     @foreach($posts as $post)
-                        {{$post->title}}
-                        {{$post->body}}
-                        <br>
+                    <h3> {{$post->title}}</h3>
+                    <p>{{$post->body}}</p>
+                    <br>
                     @endforeach
                 </div>
             </div>
