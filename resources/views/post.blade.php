@@ -18,6 +18,14 @@
                     <div class=" container create-post-div">
                         <h1>Create New Post</h1>
                         <div>
+                            @if(session()->has('status'))
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    <strong>{{ session('status') }}!</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
                             <form method="POST">
                                 @csrf
                                 <div class="mb-3">

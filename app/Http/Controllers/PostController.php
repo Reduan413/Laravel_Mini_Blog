@@ -37,7 +37,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->body = $request->body;
         $user->post()->save($post);
-        return redirect(route('post_index'));
+        return redirect(route('home'))->with('status','Post Added');
     }
 
     /**
