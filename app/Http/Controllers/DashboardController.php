@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -15,7 +16,7 @@ class DashboardController extends Controller
 
    public function show_post()
    {
-      $posts = Post::all();
-      return view('home', ['posts' => $posts]);
+      $posts = Post::whereUserId(Auth::id())->get();
+      return view('dashboard', ['posts' => $posts]);
    }
 }

@@ -35,7 +35,7 @@
 
                     @auth
                     <ul class="navbar-nav me-auto">
-                        <li> <a class="nav-link" href="{{ route('home') }}">{{ __('Dashboard') }}</a>
+                        <li> <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
                         </li>
                         <li> <a class="nav-link" href="{{ route('post_index') }}">{{ __('Post') }}</a>
                         </li>
@@ -61,6 +61,7 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
+                                {{ Auth::user()->id }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
