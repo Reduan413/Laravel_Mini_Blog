@@ -15,6 +15,10 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" media="all" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('style.css') }}" />
     <!-- Scripts -->
     <blade vite|(%5B%26%2339%3Bresources%2Fsass%2Fapp.scss%26%2339%3B%2C%20%26%2339%3Bresources%2Fjs%2Fapp.js%26%2339%3B%5D)>
 </head>
@@ -86,6 +90,13 @@
         </main>
     </div>
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace('wysiwyg-editor', {
+            filebrowserUploadUrl: "{{route('ckeditor.image-upload', ['_token' => csrf_token() ])}}"
+            , filebrowserUploadMethod: 'form'
+        });
+
+    </script>
 </body>
 
 </html>

@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="body" class="form-label">Body</label>
-                                    <textarea type="password" name="body" class="form-control" id="body">{{ $post->body }}</textarea>
+                                    <textarea type="password" name="body" class="ckeditor  form-control" id="body">{{ $post->body }}</textarea>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Update</button>
@@ -47,4 +47,10 @@
         </div>
     </div>
 </div>
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 @endsection
