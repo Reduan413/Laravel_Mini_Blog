@@ -14,7 +14,7 @@
         </div>
         @endif
 
-        <form method="POST">
+        <form method="POST" action="{{ url('dashboard/create-student') }}" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">

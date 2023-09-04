@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Students;
+use Illuminate\Http\Request;
 
 class StudentsController extends Controller
 {
@@ -35,6 +34,8 @@ class StudentsController extends Controller
             'phone' => 'required|string',
             'subject' => 'required|string',
         ]);
+
+
         $user = $request->user();
         $student = new Students;
         $student->full_name = $request->full_name;
@@ -44,18 +45,30 @@ class StudentsController extends Controller
         $student->email = $request->email;
         $student->phone = $request->phone;
         $student->subject = $request->subject;
-        $user->student()->save($student);
-        if ($request->file('image')) {
 
-            if ($data->image != '' && file_exists(public_path($data->image))) {
-                unlink(public_path($data->image));
-            }
-
-            $image  = $request->file('img');
-            Storage::putFile('public/img/', $image);
-            $data->image = "storage/img/" . $image->hashName();
+        $image = null;
+        if ($request->hasFile('image')) {
+            $get_image = $request->file('image');
+            $image_name = time() . '.' . $get_image->getClientOriginalExtension();
+            $location = public_path('img/');
+            $get_image->move($location, $image_name);
+            $image = "img/" . $image_name;
         }
-        return redirect(route('dashboard'))->with('status','New Student Added');
+        $student->image = $image;
+
+        $user->student()->save($student);
+
+        // if ($request->file('image')) {
+        //     // $image  = $request->file('img');
+        //     // Storage::putFile('public/img/', $image);
+        //     // $student->image = "storage/img/" . $image->hasName();
+        // }
+
+
+
+
+
+        return redirect(route('dashboard'))->with('status', 'New Student Added');
     }
 
     /**
@@ -66,7 +79,7 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-//
+        //
     }
 
     /**
