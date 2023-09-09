@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
 <div class="container">
@@ -17,11 +17,11 @@
         <form method="POST" action="{{ url('dashboard/create-student') }}" enctype="multipart/form-data">
             @csrf
             <div class="row">
-                @if ($data->image != '' && file_exists(public_path($data->image)))
+                {{-- @if ($data->image != '' && file_exists(public_path($data->image)))
                 <div class="upload-image">
                     <img src="{{ url($data->image) }}" />
                 </div>
-                @endif
+                @endif --}}
                 <div class="col-md-6 mt-md-0 mt-3">
                     <label>Profile Image</label>
                     <input type="file" class="form-control" name="image">

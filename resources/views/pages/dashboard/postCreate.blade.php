@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
 <div class="container">
@@ -9,9 +9,9 @@
 
                 <div class="card-body">
                     @if(session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
 
@@ -19,14 +19,14 @@
                         <h1>Create New Post</h1>
                         <div>
                             @if(session()->has('status'))
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <strong>{{ session('status') }}!</strong>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>{{ session('status') }}!</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                             @endif
-                            <form method="POST">
+                            <form method="POST" action="{{ url('dashboard/create-post') }}">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="title" class="form-label">Title</label>

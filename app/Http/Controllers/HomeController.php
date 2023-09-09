@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function show_all_post()
    {
       $posts = Post::paginate(5);
-      return view('home', ['posts' => $posts]);
+      return view('pages.frontend.home', ['posts' => $posts]);
    }
 }

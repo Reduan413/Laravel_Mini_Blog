@@ -12,9 +12,13 @@ class StudentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        return view('createStudent');
+        return view('pages.dashboard.createStudent');
     }
 
     /**
@@ -68,7 +72,7 @@ class StudentsController extends Controller
 
 
 
-        return redirect(route('dashboard'))->with('status', 'New Student Added');
+        return redirect(route('all_student'))->with('status', 'New Student Added');
     }
 
     /**
