@@ -41,13 +41,13 @@
                             <div class="left"></div>
                             <div class="right"></div>
                         </div>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}"><i class="fas fa-tachometer-alt"></i>Home</a>
+                        <li class="{{ request()->path() == '/' ? 'nav-item active' : 'nav-item' }}">
+                            <a class="nav-link" href="{{ route('home') }}"><i class="fas fa-tachometer-alt"></i>Home </a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('allStudent') }}"><i class="far fa-address-book"></i>All Student</a>
+                        <li class="{{ request()->path() == 'all_student' ? 'nav-item active' : 'nav-item' }}">
+                            <a class="nav-link" href="{{ route('student_page') }}"><i class="far fa-address-book"></i>All Student</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Blog</a>
                         </li>
                         <li class="nav-item">
@@ -55,7 +55,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Kullanıcı Girişi</a>
-                        </li>
+                        </li> --}}
 
                     </ul>
                 </div>

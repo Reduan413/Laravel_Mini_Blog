@@ -1,3 +1,4 @@
+@import "node_modules/font-awesome/scss/font-awesome.scss";
 body {
     background: linear-gradient(45deg, #ebdee2, #787778);
     min-height: 100vh;
@@ -216,7 +217,15 @@ i {
     bottom: 0;
     left: -25px;
 }
-
+.page-header {
+    background: aliceblue;
+    padding: 10px;
+    border-radius: 4px;
+}
+.page-header .header{
+    margin: auto 0;
+    font-size: 30px;
+}
 @media (min-width: 992px) {
     .navbar-expand-custom {
         -ms-flex-flow: row nowrap;

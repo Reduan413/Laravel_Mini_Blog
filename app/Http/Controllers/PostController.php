@@ -71,7 +71,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('all_post', ['post'=>$post]);
+        return view('pages.dashboard.postedit', ['post'=>$post]);
     }
 
     /**

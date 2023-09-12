@@ -8,6 +8,7 @@ use App\Http\Controllers\ShowStudentsController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\CKEditorController;
 use App\Http\Controllers\ShowPostsController;
+use App\Http\Controllers\StudentPageController;
 
 
 // Route::get('/', function () {
@@ -18,7 +19,7 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/',[HomeController::class,'show_all_post'])->name('home');
-Route::get('/all_student',[ShowStudentsController::class,'show_all_student'])->name('student_page');
+Route::get('/all_student',[StudentPageController::class,'show_all_student'])->name('student_page');
 Route::get('/dashboard',[DashboardController::class,'show_post'])->name('dashboard');
 Route::get('dashboard/all-post',[ShowPostsController::class,'show_all_post'])->name('all_post');
 Route::get('dashboard/create-post',[PostController::class,'index'])->name('post_create_index');

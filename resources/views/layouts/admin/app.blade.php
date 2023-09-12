@@ -15,6 +15,10 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" media="all" />
+    <!-- Uicons -->
+    <link rel="stylesheet" href="{{ asset('assets/css/uicons.css') }}" />
+    <!-- Icofont -->
+    <link rel="stylesheet" href="{{ asset('assets/css/icofont.css') }}" />
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/adminNav.css') }}">
@@ -33,16 +37,16 @@
         <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
             <div class="position-sticky">
                 <div class="list-group list-group-flush mx-3 mt-4">
-                    <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-                        <i class="fas fa-tachometer-alt fa-fw me-3"></i>
+                    <a href="{{ route('dashboard') }}" class="{{ request()->path() == 'dashboard' ? 'list-group-item list-group-item-action py-2 ripple active' : 'list-group-item list-group-item-action py-2 ripple' }}" aria-current="true">
+                        <i class="fi fi-rr-home me-3"></i>
                         <span>Dashboard</span>
                     </a>
-                    <a href={{ route('all_post') }} class="list-group-item list-group-item-action py-2 ripple">
-                        <i class="fas fa-chart-area fa-fw me-3"></i>
+                    <a href={{ route('all_post') }} class="{{ request()->path() == 'dashboard/all-post' ? 'list-group-item list-group-item-action py-2 ripple active' : (request()->path() == 'dashboard/create-post' ? 'list-group-item list-group-item-action py-2 ripple active':  (request()->path() == 'dashboard/post/edit/${id}' ? 'list-group-item list-group-item-action py-2 ripple active': 'list-group-item list-group-item-action py-2 ripple'))}}">
+                        <i class="fi fi-sr-blog-text me-3"></i>
                         <span>Post</span>
                     </a>
-                    <a href={{ route('all_student') }} class="list-group-item list-group-item-action py-2 ripple">
-                        <i class="fas fa-lock fa-fw me-3"></i>
+                    <a href={{ route('all_student') }} class="{{ request()->path() == 'dashboard/all-students' ? 'list-group-item list-group-item-action py-2 ripple active' : (request()->path() == 'dashboard/create-student' ? 'list-group-item list-group-item-action py-2 ripple active':  (request()->path() == 'dashboard/post/edit/${id}' ? 'list-group-item list-group-item-action py-2 ripple active': 'list-group-item list-group-item-action py-2 ripple'))}}">
+                        <i class="fi fi-ss-users-alt me-3"></i>
                         <span>All Students</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple">

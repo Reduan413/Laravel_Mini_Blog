@@ -6,7 +6,9 @@
         @foreach ($students as $student)
         <div class="col-lg-3 col-md-3 col-12 mt-3">
             <div class="card">
+                @if ($student->image != '' && file_exists(public_path($student->image)))
                 <img class="card-img-top" src="{{ url($student->image) }}">
+                @endif
                 <div class="card-body">
 
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
