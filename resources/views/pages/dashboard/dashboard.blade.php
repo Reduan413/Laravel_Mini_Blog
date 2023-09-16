@@ -2,45 +2,52 @@
 
 @section('content')
 <div class="">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="page-header d-flex justify-content-between page-header">
+        <h5 class="header">{{ __('Dashboard') }}</h5>
+    </div>
+    <div class=" justify-content-center">
+        <div class="mt-5">
+            {{-- <h1>All Post</h1> --}}
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="card text-center bg-secondary text-white">
+                        <div class="card-body">
+                            <h3 class="card-title">All Posts</h3>
+                            <h1 class="card-text">{{ count($allPosts) }}</h1>
 
-                <div class="card-body">
-                    @if(session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                        </div>
                     </div>
-                    @endif
+                </div>
+                <div class="col-lg-3">
+                    <div class="card text-center bg-warning">
+                        <div class="card-body">
+                            <h3 class="card-title">My Postes</h3>
+                            <h1 class="card-text">{{ count($posts) }}</h1>
 
-                    <table class="table table-hover table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="width:15%">Name</th>
-                                <th scope="col" style="width:25%">Title</th>
-                                <th scope="col" style="width:45%">Body</th>
-                                <th scope="col" style="width:15%">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($posts as $post)
-                            <tr>
-                                <td>{{ $post->user->name }}</td>
-                                <td> {{ $post->title }}</td>
-                                <td> {{ $post->body }}</td>
-                                <td class="d-flex" style="gap:10px">
-                                    <a href="{{ url('/post/edit',$post->id) }}" class="btn btn-info">Edit</a>
-                                    <a href="{{ url('/post/delete',$post->id) }}" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card text-center bg-success text-white">
+                        <div class="card-body">
+                            <h3 class="card-title">All Students</h3>
+                            <h1 class="card-text">{{ count($allStudents) }}</h1>
 
-                        </tbody>
-                    </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 ">
+                    <div class="card text-center bg-info">
+                        <div class="card-body">
+                            <h3 class="card-title">My added Students</h3>
+                            <h1 class="card-text">{{ count($Students) }}</h1>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 @endsection

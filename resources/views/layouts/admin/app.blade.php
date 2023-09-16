@@ -127,7 +127,7 @@
     <!--Main Navigation-->
 
     <!--Main layout-->
-    <main style="margin-top: 100px">
+    <main style="margin-top: 70px">
 
         @yield('content')
 

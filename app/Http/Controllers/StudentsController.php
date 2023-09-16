@@ -18,7 +18,7 @@ class StudentsController extends Controller
     }
     public function index()
     {
-        return view('pages.dashboard.createStudent');
+        return view('pages.dashboard.studentCreate');
     }
 
     /**
@@ -105,7 +105,8 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Students::find($id);
+        return view('pages.dashboard.studentEdit', ['student'=>$student]);
     }
 
     /**
@@ -117,7 +118,39 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'image' => 'required|file',
+            'full_name' => 'required|string',
+            'last_name' => 'required|string',
+            'birthday' => 'required|string',
+            'gender' => 'required|string',
+            'email' => 'required|string',
+            'phone' => 'required|string',
+            'subject' => 'required|string',
+        ]);
+
+
+        $student = Students::find($id);
+        $student->full_name = $request->full_name;
+        $student->last_name = $request->last_name;
+        $student->birthday = $request->birthday;
+        $student->gender = $request->gender;
+        $student->email = $request->email;
+        $student->phone = $request->phone;
+        $student->subject = $request->subject;
+
+        $image = null;
+        if ($request->hasFile('image')) {
+            $get_image = $request->file('image');
+            $image_name = time() . '.' . $get_image->getClientOriginalExtension();
+            $location = public_path('img/');
+            $get_image->move($location, $image_name);
+            $image = "img/" . $image_name;
+        }
+        $student->image = $image;
+
+        $student->save();
+        return redirect(route('all_student'))->with('status','Student Updated !!');
     }
 
     /**
@@ -128,6 +161,7 @@ class StudentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Students::destroy($id);
+        return redirect(route("all_student"))->with('status','Student Deleted !!');
     }
 }

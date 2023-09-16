@@ -31,3 +31,6 @@ Route::post('ckeditor/upload',[CKEditorController::class,'upload'])->name('ckedi
 Route::get('/dashboard/all-students',[ShowStudentsController::class,'show_all_student'])->name('all_student');
 Route::get('/dashboard/create-student',[StudentsController::class,'index'])->name('student_create_index');
 Route::post('/dashboard/create-student',[StudentsController::class,'create'])->name('student_create');
+Route::get('dashboard/student/edit/{id}',[StudentsController::class,'edit'])->name('student_edit');
+Route::put('dashboard/student/edit/{id}',[StudentsController::class,'update'])->name('student_update');
+Route::get('dashboard/student/delete/{id}',[StudentsController::class,'destroy'])->name('student_destroy');
